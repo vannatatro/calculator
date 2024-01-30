@@ -52,13 +52,6 @@ button {
     border: solid;
 }
 
-#equal {
-    background-color: #e9dbff !important;
-}
-#equal:hover {
-    background-color: #d8e4ff !important;
-}
-
 
 button:hover {
     background-color: #d8e4ff !important;
