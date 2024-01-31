@@ -17,9 +17,9 @@
 #calculator {
     height: 725px;
     width: 500px;
-    display: flex;
     border: solid;
     border-radius: 20px;
+    padding: 15px;
 }
 
 * {
@@ -110,4 +110,10 @@ h1 {
 
 #clearBtns button:hover {
     background-color: aliceblue !important;
+}
+
+#history {
+    width: 500px;
+    text-align: right;
+    font-size: 24px;
 }

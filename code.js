@@ -1,7 +1,5 @@
-// Make functions
-// let num1 = ""
-// let num2 = ""
 
+let allHistory = " "
 let num = ""
 let solve = ""
 let expressionInput = document.querySelector("#expression");
@@ -141,6 +139,7 @@ equals.addEventListener ('click', () => {
     if (solve.includes("+")) {
         answer = num1 + num2;
         expressionInput.textContent = answer;
+
     }
     if (solve.includes("-")) {
         answer = num1 - num2;
@@ -154,5 +153,13 @@ equals.addEventListener ('click', () => {
         answer = num1 / num2;
         expressionInput.textContent = answer;
     }
+
+    solve += " = ";
+    solve += answer;
+    allHistory += solve;
+    textHistory = document.querySelector("#history");
+    textHistory.textContent = allHistory;
+    solve = ""
+    num = ""
 })
 
