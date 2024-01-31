@@ -13,9 +13,9 @@
     background-color: white;
 }
 
-#history,
+#historyContainer,
 #calculator {
-    height: 650px;
+    height: 725px;
     width: 500px;
     display: flex;
     border: solid;
@@ -54,7 +54,7 @@ button {
 
 
 button:hover {
-    background-color: #d8e4ff !important;
+    background-color: aliceblue !important;
 }
 
 #expression {
@@ -86,7 +86,28 @@ h1 {
     font-size: 45px;
     padding: 20px
 }
-#history {
-    height: 650px;
+#historyContainer {
+    height: 725px;
     width: 500px;
+}
+
+
+#clearBtns {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+#clearBtns button {
+    width: 225px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(255, 238, 206) !important;
+}
+
+#clearBtns button:hover {
+    background-color: aliceblue !important;
 }
