@@ -13,16 +13,6 @@ function errorCondition() {
 
 }
 
-// const add = num1 + num2
-// const subtract = num1 - num2
-// const divide = num1 / num2
-// const multiply = num1 * num2
-
-// console.log(add)
-// console.log(subtract)
-// console.log(divide)
-// console.log(multiply)
-
 // Make buttons work
 
 let one = document.querySelector('#oneBtn')
@@ -115,21 +105,54 @@ decimal.addEventListener ('click', () => {
 })
 
 // Make operator buttons
+let add = document.querySelector('#plusBtn')
+add.addEventListener ('click', () => {
+    solve += " + ";
+    num = "";
+    expressionInput.textContent = num;
+})
+
 let subtract = document.querySelector('#subBtn')
 subtract.addEventListener ('click', () => {
     solve += " - ";
     num = "";
     expressionInput.textContent = num;
-    console.log(solve)
-    console.log(num)
 }  )
 
 let multiply = document.querySelector('#multiBtn')
 multiply.addEventListener ('click', () => {
     solve += " × "
+    num = "";
     expressionInput.textContent = "";
 })
 
+let divide = document.querySelector('#divideBtn')
+divide.addEventListener ('click', () => {
+    solve += " ÷ ";
+    num = "";
+    expressionInput.textContent = num;
+})
 
-
+let equals = document.querySelector("#equalBtn")
+equals.addEventListener ('click', () => {
+    let arraySolve = solve.split(' ');
+        let num1 = Number(arraySolve[0]);
+        let num2 = Number(arraySolve[2]);
+    if (solve.includes("+")) {
+        answer = num1 + num2;
+        expressionInput.textContent = answer;
+    }
+    if (solve.includes("-")) {
+        answer = num1 - num2;
+        expressionInput.textContent = answer;
+    }
+    if (solve.includes("×")) {
+        answer = num1 * num2;
+        expressionInput.textContent = answer;
+    }
+    if (solve.includes("÷")) {
+        answer = num1 / num2;
+        expressionInput.textContent = answer;
+    }
+})
 
