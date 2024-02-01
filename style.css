@@ -119,5 +119,6 @@ h1 {
     font-size: 24px;
     white-space: pre-line;
     overflow-y: auto;
+    scroll-behavior: auto;
     
 }
