@@ -1,14 +1,17 @@
 
 let allHistory = " "
+let answer = ''
+let rounded = ''
 let num = ''
 let solve = ''
 let expressionInput = document.querySelector("#expression");
 
 function errorCondition() {
     if (num.length >= 15) {
-        expressionInput.textContent = 'error'
+        expressionInput.textContent = 'error';
     }
-
+    if (String(rounded).length >= 15)
+        expressionInput.textContent = 'error'
 }
 
 // Make buttons work
@@ -131,37 +134,57 @@ divide.addEventListener ('click', () => {
     expressionInput.textContent = num;
 })
 
-// let equals = document.querySelector("#equalBtn")
-// equals.addEventListener ('click', () => {
-//     let arraySolve = solve.split(' ');
-//         let num1 = Number(arraySolve[0]);
-//         let num2 = Number(arraySolve[2]);
-//     if (solve.includes("+")) {
-//         answer = num1 + num2;
-//         expressionInput.textContent = answer;
+function roundToTwo(number) {
+    errorCondition();
+  return +(Math.round(number + "e+10") + "e-10");
+}
 
-//     }
-//     if (solve.includes("-")) {
-//         answer = num1 - num2;
-//         expressionInput.textContent = answer;
-//     }
-//     if (solve.includes("×")) {
-//         answer = num1 * num2;
-//         expressionInput.textContent = answer;
-//     }
-//     if (solve.includes("÷")) {
-//         answer = num1 / num2;
-//         expressionInput.textContent = answer;
-//     }
 
-//     solve += " = ";
-//     solve += answer;
-//     allHistory += solve;
-//     textHistory = document.querySelector("#history");
-//     textHistory.textContent = allHistory;
-//     solve = ""
-//     num = ""
-// })
+let equals = document.querySelector("#equalBtn")
+equals.addEventListener ('click', () => {
+    let arraySolve = solve.split(' ');
+        let num1 = Number(arraySolve[0]);
+        let num2 = Number(arraySolve[2]);
+    if (solve.includes("+")) {
+        answer = num1 + num2;
+        let number = answer;
+        let rounded = roundToTwo(number);
+        expressionInput.textContent = rounded;
+        errorCondition();
+
+    }
+    if (solve.includes("-")) {
+        answer = num1 - num2;
+        let number = answer;
+        let rounded = roundToTwo(number);
+        expressionInput.textContent = rounded;
+        errorCondition();
+    }
+    if (solve.includes("×")) {
+        answer = num1 * num2;
+        let number = answer;
+        let rounded = roundToTwo(number);
+        expressionInput.textContent = rounded;
+        errorCondition();
+    }
+    if (solve.includes("÷")) {
+        answer = num1 / num2;
+        let number = answer;
+        let rounded = roundToTwo(number);
+        expressionInput.textContent = rounded;
+        errorCondition();
+    }
+
+    solve += " = ";
+    solve += answer;
+    console.log(typeof(solve))
+    allHistory += solve + '\n \n';
+    console.log(allHistory)
+    textHistory = document.querySelector("#history");
+    textHistory.textContent = allHistory;
+    solve = ""
+    num = ""
+})
 
 
 // Delete Buttons
