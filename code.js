@@ -13,7 +13,7 @@ function errorCondition() {
     if (String(rounded).length >= 15) 
         expressionInput.textContent = 'error'
     
-    if (String(answer).length >=15)
+    if ((String(answer).split('.')[0]).length >=9)
      expressionInput.textContent = 'error'
 }
 
@@ -154,7 +154,7 @@ divide.addEventListener ('click', () => {
 })
 
 function roundToTwo(number) {
-    errorCondition();
+    // errorCondition();
   return +(Math.round(number + "e+5") + "e-5");
 }
 
@@ -207,9 +207,7 @@ equals.addEventListener ('click', () => {
 
     solve += " = ";
     solve += answer;
-    console.log(typeof(solve))
     allHistory += solve + '\n \n';
-    console.log(allHistory)
     textHistory = document.querySelector("#history");
     textHistory.textContent = allHistory;
     solve = ""
