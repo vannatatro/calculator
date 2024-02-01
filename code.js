@@ -209,7 +209,6 @@ equals.addEventListener ('click', () => {
     textHistory.textContent = allHistory;
     solve = ""
     num = ""
-    solve += placeholder
 })
 
 
