@@ -13,7 +13,7 @@ function errorCondition() {
     if (String(rounded).length >= 15) 
         expressionInput.textContent = 'error'
     
-    if ((String(answer).split('.')[0]).length >=5)
+    if ((String(answer).split('.')[0]).length >=9)
      expressionInput.textContent = 'error'
 }
 
