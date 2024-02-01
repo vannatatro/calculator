@@ -6,7 +6,7 @@
 #mainContainer {
     display: flex;
     justify-content: space-evenly;
-    margin: 75px;
+    margin: 25px;
 }
 
 #mainContainer * {
@@ -15,7 +15,7 @@
 
 #historyContainer,
 #calculator {
-    height: 725px;
+    height: 700px;
     width: 500px;
     border: solid;
     border-radius: 20px;
@@ -87,7 +87,7 @@ h1 {
     padding: 20px
 }
 #historyContainer {
-    height: 725px;
+    height: 700px;
     width: 500px;
 }
 
