@@ -103,6 +103,9 @@ decimal.addEventListener ('click', () => {
     num += ".";
     expressionInput.textContent = num;
     errorCondition();
+    if (num.split('.').length > 2) {
+        expressionInput.textContent = 'error';
+    }
 })
 
 // Make operator buttons
