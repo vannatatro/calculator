@@ -1,7 +1,7 @@
 
 let allHistory = " "
-let num = ""
-let solve = ""
+let num = ''
+let solve = ''
 let expressionInput = document.querySelector("#expression");
 
 function errorCondition() {
@@ -106,7 +106,7 @@ decimal.addEventListener ('click', () => {
 let add = document.querySelector('#plusBtn')
 add.addEventListener ('click', () => {
     solve += " + ";
-    num = "";
+    num = '';
     expressionInput.textContent = num;
 })
 
@@ -131,35 +131,50 @@ divide.addEventListener ('click', () => {
     expressionInput.textContent = num;
 })
 
-let equals = document.querySelector("#equalBtn")
-equals.addEventListener ('click', () => {
-    let arraySolve = solve.split(' ');
-        let num1 = Number(arraySolve[0]);
-        let num2 = Number(arraySolve[2]);
-    if (solve.includes("+")) {
-        answer = num1 + num2;
-        expressionInput.textContent = answer;
+// let equals = document.querySelector("#equalBtn")
+// equals.addEventListener ('click', () => {
+//     let arraySolve = solve.split(' ');
+//         let num1 = Number(arraySolve[0]);
+//         let num2 = Number(arraySolve[2]);
+//     if (solve.includes("+")) {
+//         answer = num1 + num2;
+//         expressionInput.textContent = answer;
 
-    }
-    if (solve.includes("-")) {
-        answer = num1 - num2;
-        expressionInput.textContent = answer;
-    }
-    if (solve.includes("×")) {
-        answer = num1 * num2;
-        expressionInput.textContent = answer;
-    }
-    if (solve.includes("÷")) {
-        answer = num1 / num2;
-        expressionInput.textContent = answer;
-    }
+//     }
+//     if (solve.includes("-")) {
+//         answer = num1 - num2;
+//         expressionInput.textContent = answer;
+//     }
+//     if (solve.includes("×")) {
+//         answer = num1 * num2;
+//         expressionInput.textContent = answer;
+//     }
+//     if (solve.includes("÷")) {
+//         answer = num1 / num2;
+//         expressionInput.textContent = answer;
+//     }
 
-    solve += " = ";
-    solve += answer;
-    allHistory += solve;
-    textHistory = document.querySelector("#history");
-    textHistory.textContent = allHistory;
-    solve = ""
-    num = ""
+//     solve += " = ";
+//     solve += answer;
+//     allHistory += solve;
+//     textHistory = document.querySelector("#history");
+//     textHistory.textContent = allHistory;
+//     solve = ""
+//     num = ""
+// })
+
+
+// Delete Buttons
+let ac = document.querySelector('#acBtn')
+ac.addEventListener ('click', () => {
+    solve = solve.slice(0, -1);
+    num = num.slice(0, -1);
+    expressionInput.textContent = num;
 })
 
+let ce = document.querySelector('#ceBtn')
+ce.addEventListener ('click', () => {
+    solve = ""
+    num = ""
+    expressionInput.textContent = num;
+})
