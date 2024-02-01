@@ -13,7 +13,7 @@ function errorCondition() {
     if (String(rounded).length >= 15) 
         expressionInput.textContent = 'error'
     
-    if ((String(answer).split('.')[0]).length >=9)
+    if ((String(answer).split('.')[0]).length >=5)
      expressionInput.textContent = 'error'
 }
 
@@ -207,6 +207,7 @@ equals.addEventListener ('click', () => {
 
     solve += " = ";
     solve += answer;
+    console.log(typeof(solve))
     allHistory += solve + '\n \n';
     textHistory = document.querySelector("#history");
     textHistory.textContent = allHistory;
