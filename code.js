@@ -201,10 +201,6 @@ equals.addEventListener ('click', () => {
 
     }
 
-    if (length.arraySolve < 1){
-        answer = solve
-    }
-
     solve += " = ";
     solve += answer;
     console.log(typeof(solve))
