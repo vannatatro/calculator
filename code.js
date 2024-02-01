@@ -7,12 +7,16 @@ let solve = ''
 let expressionInput = document.querySelector("#expression");
 
 function errorCondition() {
-    if (num.length >= 15) {
+    if (num.length >= 15) 
         expressionInput.textContent = 'error';
-    }
-    if (String(rounded).length >= 15)
+
+    if (String(rounded).length >= 15) 
         expressionInput.textContent = 'error'
+    
+    if (String(answer).length >=15)
+     expressionInput.textContent = 'error'
 }
+
 
 // Make buttons work
 
@@ -111,6 +115,9 @@ decimal.addEventListener ('click', () => {
 // Make operator buttons
 let add = document.querySelector('#plusBtn')
 add.addEventListener ('click', () => {
+    if (solve == "") {
+        solve = placeholder
+    }
     solve += " + ";
     num = '';
     expressionInput.textContent = num;
@@ -118,6 +125,9 @@ add.addEventListener ('click', () => {
 
 let subtract = document.querySelector('#subBtn')
 subtract.addEventListener ('click', () => {
+    if (solve == "") {
+        solve = placeholder
+    }
     solve += " - ";
     num = "";
     expressionInput.textContent = num;
@@ -125,6 +135,9 @@ subtract.addEventListener ('click', () => {
 
 let multiply = document.querySelector('#multiBtn')
 multiply.addEventListener ('click', () => {
+    if (solve == "") {
+        solve = placeholder
+    }
     solve += " × "
     num = "";
     expressionInput.textContent = "";
@@ -132,6 +145,9 @@ multiply.addEventListener ('click', () => {
 
 let divide = document.querySelector('#divideBtn')
 divide.addEventListener ('click', () => {
+    if (solve == "") {
+        solve = placeholder
+    }
     solve += " ÷ ";
     num = "";
     expressionInput.textContent = num;
@@ -139,7 +155,7 @@ divide.addEventListener ('click', () => {
 
 function roundToTwo(number) {
     errorCondition();
-  return +(Math.round(number + "e+10") + "e-10");
+  return +(Math.round(number + "e+5") + "e-5");
 }
 
 
@@ -154,6 +170,7 @@ equals.addEventListener ('click', () => {
         let rounded = roundToTwo(number);
         expressionInput.textContent = rounded;
         errorCondition();
+        placeholder = answer
 
     }
     if (solve.includes("-")) {
@@ -162,6 +179,8 @@ equals.addEventListener ('click', () => {
         let rounded = roundToTwo(number);
         expressionInput.textContent = rounded;
         errorCondition();
+        placeholder = answer
+
     }
     if (solve.includes("×")) {
         answer = num1 * num2;
@@ -169,6 +188,8 @@ equals.addEventListener ('click', () => {
         let rounded = roundToTwo(number);
         expressionInput.textContent = rounded;
         errorCondition();
+        placeholder = answer
+
     }
     if (solve.includes("÷")) {
         answer = num1 / num2;
@@ -176,6 +197,8 @@ equals.addEventListener ('click', () => {
         let rounded = roundToTwo(number);
         expressionInput.textContent = rounded;
         errorCondition();
+        placeholder = answer
+
     }
 
     if (length.arraySolve < 1){
@@ -191,6 +214,7 @@ equals.addEventListener ('click', () => {
     textHistory.textContent = allHistory;
     solve = ""
     num = ""
+    solve += placeholder
 })
 
 
@@ -206,5 +230,6 @@ let ce = document.querySelector('#ceBtn')
 ce.addEventListener ('click', () => {
     solve = ""
     num = ""
+    answer = ""
     expressionInput.textContent = num;
 })
