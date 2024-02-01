@@ -178,6 +178,10 @@ equals.addEventListener ('click', () => {
         errorCondition();
     }
 
+    if (length.arraySolve < 1){
+        answer = solve
+    }
+
     solve += " = ";
     solve += answer;
     console.log(typeof(solve))
